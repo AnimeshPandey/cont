@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Animesh!</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/normalize6.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo6.css" />
+    <link rel="stylesheet" type="text/css" href="css/component6.css" />
+    <link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+    <link rel="stylesheet" type="text/css" href="css/cs-skin-boxes.css" />
+    <script src="js/modernizr.custo.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="fs-form-wrap" id="fs-form-wrap">
+            <div class="fs-title">
+                <h1>Get in touch!</h1>
+            </div>
+            <form id="myform" class="fs-form fs-form-full" autocomplete="off" method="POST" action="http://formspree.io/animesh.pandey1903@rediffmail.com">
+                <ol class="fs-fields">
+                    <li>
+                        <label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
+                        <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Dean Moriarty" required/>
+                    </li>
+                    <li>
+                        <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you spam, we promise...">What's your email address?</label>
+                        <input class="fs-anim-lower" id="q2" name="q2" type="email" placeholder="dean@road.us" required/>
+                    </li>
+                    <li>
+                        <label class="fs-field-label fs-anim-upper" for="q4">Please send me your response below.</label>
+                        <textarea class="fs-anim-lower" id="q4" name="q4" placeholder="Describe here"></textarea>
+                    </li>
+                </ol>
+                <!-- /fs-fields -->
+                <button class="fs-submit" type="submit">Send answers</button>
+            </form>
+            <!-- /fs-form -->
+        </div>
+        <!-- /fs-form-wrap -->
+
+    </div>
+    <!-- /container -->
+    <script src="js/classie.js"></script>
+    <script src="js/selectFx.js"></script>
+    <script src="js/fullscreenForm.js"></script>
+    <script>
+        (function() {
+            var formWrap = document.getElementById('fs-form-wrap');
+
+            [].slice.call(document.querySelectorAll('select.cs-select')).forEach(function(el) {
+                new SelectFx(el, {
+                    stickyPlaceholder: false,
+                    onChange: function(val) {
+                        document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+                    }
+                });
+            });
+
+            new FForm(formWrap, {
+                onReview: function() {
+                    classie.add(document.body, 'overview'); // for demo purposes only
+                }
+            });
+        })();
+
+    </script>
+</body>
+
+</html>
